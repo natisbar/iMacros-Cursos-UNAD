@@ -1,0 +1,14 @@
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_use_turnitin CONTENT=%1
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_plagiarism_show_student_report CONTENT=%1
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_plagiarism_allow_non_or_submissions CONTENT=%1
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_plagiarism_submitpapersto CONTENT=%1
+
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_plagiarism_compare_student_papers CONTENT=%1
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_plagiarism_compare_internet CONTENT=%1
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_plagiarism_compare_journals CONTENT=%1
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_plagiarism_report_gen CONTENT=%2
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_plagiarism_exclude_biblio CONTENT=%1
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_plagiarism_exclude_quoted CONTENT=%1
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_plagiarism_exclude_matches CONTENT=%2
+
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:mform1 ATTR=ID:id_plagiarism_exclude_matches_value CONTENT=1

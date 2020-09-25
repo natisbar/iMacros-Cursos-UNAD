@@ -1,0 +1,59 @@
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:mform1 ATTR=ID:id_allowsubmissionsfromdate_enabled CONTENT=YES
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:mform1 ATTR=ID:id_duedate_enabled CONTENT=YES
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:mform1 ATTR=ID:id_cutoffdate_enabled CONTENT=YES
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:mform1 ATTR=ID:id_gradingduedate_enabled CONTENT=NO
+
+PROMPT "Desde/Día: " !VAR1
+PROMPT "Desde/Mes: " !VAR2
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_allowsubmissionsfromdate_day CONTENT=%{{!VAR1}}
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_allowsubmissionsfromdate_month CONTENT=%{{!VAR2}}
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_allowsubmissionsfromdate_year CONTENT=%2020
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_allowsubmissionsfromdate_hour CONTENT=%0
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_allowsubmissionsfromdate_minute CONTENT=%0
+PROMPT "Desde/Día: " !VAR1
+PROMPT "Desde/Mes: " !VAR2
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_duedate_day CONTENT=%{{!VAR1}}
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_duedate_month CONTENT=%{{!VAR2}}
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_duedate_year CONTENT=%2020
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_duedate_hour CONTENT=%23
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_duedate_minute CONTENT=%55
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_cutoffdate_day CONTENT=%{{!VAR1}}
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_cutoffdate_month CONTENT=%{{!VAR2}}
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_cutoffdate_year CONTENT=%2020
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_cutoffdate_hour CONTENT=%23
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_cutoffdate_minute CONTENT=%55
+
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:mform1 ATTR=ID:id_alwaysshowdescription CONTENT=YES
+
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:mform1 ATTR=ID:id_assignsubmission_file_enabled CONTENT=YES
+'texto en linea
+'TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:mform1 ATTR=ID:id_assignsubmission_onlinetext_enabled CONTENT=NO
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_assignsubmission_file_maxfiles CONTENT=%1
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_assignsubmission_file_maxsizebytes CONTENT=%0
+
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:mform1 ATTR=ID:id_assignfeedback_comments_enabled CONTENT=YES
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:mform1 ATTR=ID:id_assignfeedback_file_enabled CONTENT=NO
+'archivos de retroalimentación
+'TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:mform1 ATTR=ID:id_assignfeedback_comments_enabled CONTENT=YES
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_assignfeedback_comments_commentinline CONTENT=%0
+
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_submissiondrafts CONTENT=%0
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_requiresubmissionstatement CONTENT=%0
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_attemptreopenmethod CONTENT=%none
+
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_teamsubmission CONTENT=%0
+
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_sendnotifications CONTENT=%0
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_sendlatenotifications CONTENT=%0
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_sendstudentnotifications CONTENT=%0
+
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_grade_modgrade_type CONTENT=%point
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_advancedgradingmethod_submissions CONTENT=%guide
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_blindmarking CONTENT=%0
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_markingworkflow CONTENT=%0
+
+
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_visible CONTENT=%1
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_groupmode CONTENT=%1
+
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_completion CONTENT=%0

@@ -1,0 +1,11 @@
+SET !CLIPBOARD "Estimado diseñador, los cursos ofertados para proceso de acreditación tiene un período vigente de 6 meses, después de esta fecha el curso queda en estado a vencido. La escuela deberá solicitar nuevamente el curso mediante el formulario diseño de cursos nuevos, para que este quede activo nuevamente. Gracias"
+TAG POS=1 TYPE=TEXTAREA ATTR=NAME:ofer08razonvence_detalle CONTENT={{!CLIPBOARD}}
+TAG POS=1 TYPE=SELECT FORM=ID:frmedita ATTR=ID:ofer08razonvence CONTENT=%1
+WAIT SECONDS=1
+TAG POS=1 TYPE=INPUT:BUTTON FORM=ID:frmedita ATTR=ID:cmdVencer
+ONDIALOG POS=1 BUTTON=Aceptar CONTENT=
+
+
+
+'TAG POS=1 TYPE=INPUT:BUTTON FORM=ID:frmedita ATTR=ID:cmdVencer
+'ONDIALOG POS=1 BUTTON=OK CONTENT= TAG POS=1 TYPE=INPUT:BUTTON FORM=ID:frmedita ATTR=ID:cmdVencer
