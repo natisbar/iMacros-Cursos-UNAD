@@ -9,13 +9,11 @@
 
 ### Cómo debo ejecutar cada iMacro
 #### 1. Entorno Inicial
-  ##### Restricciones
-  [vídeo tutorial](https://www.loom.com/share/86a52e5c736a46a8a9321e26ce3d6772)
+  ##### Restricciones: [vídeo tutorial](https://www.loom.com/share/86a52e5c736a46a8a9321e26ce3d6772)
     1_Agenda        
     2_Presentacion  
     3_Normas        
-  ##### Foros
-  [vídeo tutorial](https://www.loom.com/share/86a52e5c736a46a8a9321e26ce3d6772)
+  ##### Foros:
     4_ForoNoticias  -> Misma ejecución como en agenda/presentación/normas
     5_ForoGeneral 	-> Misma ejecución como en agenda/presentación/normas
     6_RedCurso      -> **_Sin culminarse_**
