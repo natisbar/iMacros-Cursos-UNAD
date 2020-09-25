@@ -1,7 +1,6 @@
 # iMacros-Cursos-UNAD
 
-### Cómo instalar extensión de iMacro chrome y adicionar un macro
-[vídeo tutorial:](https://www.loom.com/share/243adbfef5e04fe89741c337fecf807f)
+### Cómo instalar extensión de iMacro chrome y adicionar un macro: [vídeo tutorial](https://www.loom.com/share/243adbfef5e04fe89741c337fecf807f)
 
 ### Sobre las iMacros creadas
 1. Ir al folder "Seis_tres_Entornos" https://github.com/natisbar/iMacros-Cursos-UNAD/tree/master/Seis_tres_Entornos
@@ -10,13 +9,13 @@
 
 ### Cómo debo ejecutar cada iMacro
 #### 1. Entorno Inicial
-  Restricciones
-  Vídeo:
+  ##### Restricciones
+  [vídeo tutorial](https://www.loom.com/share/86a52e5c736a46a8a9321e26ce3d6772)
     1_Agenda        
     2_Presentacion  
     3_Normas        
-  Foros
-  Vídeo: 
-    4_ForoNoticias  
-    5_ForoGeneral 	
-    6_RedCurso      
+  ##### Foros
+  [vídeo tutorial](https://www.loom.com/share/86a52e5c736a46a8a9321e26ce3d6772)
+    4_ForoNoticias  -> Misma ejecución como en agenda/presentación/normas
+    5_ForoGeneral 	-> Misma ejecución como en agenda/presentación/normas
+    6_RedCurso      -> **_Sin culminarse_**
