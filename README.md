@@ -16,4 +16,4 @@
   ##### Foros:
     4_ForoNoticias  -> Misma ejecución como en agenda/presentación/normas
     5_ForoGeneral 	-> Misma ejecución como en agenda/presentación/normas
-    6_RedCurso      -> **_Sin culminarse_**
+    6_RedCurso      -> **Sin culminarse**
