@@ -10,22 +10,22 @@
 ### Cómo debo ejecutar cada iMacro
 #### 1. Entorno Inicial
   ##### Restricciones: [vídeo tutorial](https://www.loom.com/share/86a52e5c736a46a8a9321e26ce3d6772)
-    1_Agenda        
-    2_Presentacion  
-    3_Normas        
+    1_Agenda        -> Solo para 3 entornos
+    2_Presentacion  -> Solo para 3 entornos
+    3_Normas        -> Solo para 3 entornos
   ##### Foros:
     4_ForoNoticias  -> Misma ejecución como en agenda/presentación/normas
     5_ForoGeneral 	-> Misma ejecución como en agenda/presentación/normas
     6_RedCurso      -> **Sin culminarse**
 
 #### 2. Entorno de aprendizaje [vídeo tutorial](https://www.loom.com/share/ef5deaa3e26b4b1a9ab5e9b83644e4b3)
-    ForosColab
-    ForosColabSave
-    ForosColabSinRestriccion
+    ForosColab                  -> Para 3 y 6 entornos
+    ForosColabSave              -> Para 3 y 6 entornos
+    ForosColabSinRestriccion    -> Para 3 y 6 entornos
     
 #### 3. Entorno de evaluación [vídeo tutorial](https://www.loom.com/share/14f889467c5f42cb84fcb6127b49d504)
-    Tarea
-    TurnitinTask
+    Tarea                       -> Solo para 3 entornos
+    TurnitinTask                -> Para 3 y 6 entornos
 
 #### 4. Otros [vídeo tutorial](https://www.loom.com/share/6c99eb6c90404e3e93df3af540cf7d1b)
     AddNormas
