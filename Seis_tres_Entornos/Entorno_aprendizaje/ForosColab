@@ -12,27 +12,28 @@ TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_groupmode CONTENT=%1
 
 PROMPT "Desde/Día: " !VAR1
 PROMPT "Desde/Mes: " !VAR2
+SET !VAR2 EVAL("var aux=\"{{!VAR2}}\"; if(aux == \"e\" || aux == \"en\" || aux == \"ene\" || aux == \"enero\") 1; else if(aux == \"f\" || aux == \"fe\" || aux == \"feb\" || aux == \"febrero\") 2; else if(aux == \"mar\" || aux == \"marzo\") 3; else if(aux == \"ab\" || aux == \"abr\" || aux == \"abril\") 4; else if(aux == \"may\" || aux == \"mayo\") 5; else if(aux == \"jun\" || aux == \"junio\") 6; else if(aux == \"jul\" || aux == \"julio\") 7; else if(aux == \"ag\" || aux == \"agto\" || aux == \"agosto\") 8; else if(aux == \"s\" || aux == \"se\" || aux == \"set\" || aux == \"setp\" || aux == \"septiembre\") 9; else if(aux == \"o\" || aux == \"oc\" || aux == \"oct\" || aux == \"octubre\") 10; else if(aux == \"n\" || aux == \"no\" || aux == \"nov\" || aux == \"noviembre\") 11; else if(aux == \"d\" || aux == \"di\" || aux == \"dic\" || aux == \"diciembre\") 12; else aux=\"{{!VAR2}}\";")
+PROMPT "Desde/Año: " !VAR3
+SET !VAR3 EVAL("var aux=\"{{!VAR3}}\"; if(aux == 20) 2020; else if(aux == 21) 2021; else aux=\"{{!VAR3}}\";")
 TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[day] CONTENT=%{{!VAR1}}
 TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[month] CONTENT=%{{!VAR2}}
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[year] CONTENT=%{{!VAR3}}
 TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:direction CONTENT=%>=
 TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[hour] CONTENT=%0
 TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[minute] CONTENT=%0
-TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[year] CONTENT=%2020
-'TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:yui_3_17_2_1_*_* CONTENT= %{{!VAR1}} 
-'TAG POS=2 TYPE=SELECT FORM=ID:mform1 ATTR=ID:yui_3_17_2_1_*_* CONTENT= %{{!VAR2}}
+TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[year] CONTENT=%{{!VAR3}}
 
 PROMPT "Hasta/Día: " !VAR1
 PROMPT "Hasta/Mes: " !VAR2
+SET !VAR2 EVAL("var aux=\"{{!VAR2}}\"; if(aux == \"e\" || aux == \"en\" || aux == \"ene\" || aux == \"enero\") 1; else if(aux == \"f\" || aux == \"fe\" || aux == \"feb\" || aux == \"febrero\") 2; else if(aux == \"mar\" || aux == \"marzo\") 3; else if(aux == \"ab\" || aux == \"abr\" || aux == \"abril\") 4; else if(aux == \"may\" || aux == \"mayo\") 5; else if(aux == \"jun\" || aux == \"junio\") 6; else if(aux == \"jul\" || aux == \"julio\") 7; else if(aux == \"ag\" || aux == \"agto\" || aux == \"agosto\") 8; else if(aux == \"s\" || aux == \"se\" || aux == \"set\" || aux == \"setp\" || aux == \"septiembre\") 9; else if(aux == \"o\" || aux == \"oc\" || aux == \"oct\" || aux == \"octubre\") 10; else if(aux == \"n\" || aux == \"no\" || aux == \"nov\" || aux == \"noviembre\") 11; else if(aux == \"d\" || aux == \"di\" || aux == \"dic\" || aux == \"diciembre\") 12; else aux=\"{{!VAR2}}\";")
+PROMPT "Desde/Año: " !VAR3
+SET !VAR3 EVAL("var aux=\"{{!VAR3}}\"; if(aux == 20) 2020; else if(aux == 21) 2021; else aux=\"{{!VAR3}}\";")
 TAG POS=2 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[day] CONTENT=%{{!VAR1}}
 TAG POS=2 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[month] CONTENT=%{{!VAR2}}
+TAG POS=2 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[year] CONTENT=%{{!VAR3}}
 TAG POS=2 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:direction CONTENT=%<
 TAG POS=2 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[hour] CONTENT=%23
 TAG POS=2 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[minute] CONTENT=%55
-TAG POS=2 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[year] CONTENT=%2020
-'TAG POS=3 TYPE=SELECT FORM=ID:mform1 ATTR=ID:yui_3_17_2_1_*_* CONTENT=%{{!VAR1}}
-'TAG POS=4 TYPE=SELECT FORM=ID:mform1 ATTR=ID:yui_3_17_2_1_*_* CONTENT=%{{!VAR2}}
+TAG POS=2 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[year] CONTENT=%{{!VAR3}}
 
 TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_completion CONTENT=%0
-
-TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[year] CONTENT=%2020
-TAG POS=2 TYPE=SELECT FORM=ID:mform1 ATTR=NAME:x[year] CONTENT=%2020
