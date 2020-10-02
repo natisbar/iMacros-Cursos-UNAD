@@ -19,9 +19,10 @@
     6_RedCurso      -> **Sin culminarse**
 
 #### 2. Entorno de aprendizaje [vídeo tutorial](https://www.loom.com/share/ef5deaa3e26b4b1a9ab5e9b83644e4b3)
-    ForosColab                  -> Para 3 y 6 entornos  Nuevos ajutes, ver [tutorial](https://www.loom.com/share/0a8fe844b2d946f2985226d68390ecb5)
+    ForosColab                  -> Para 3 y 6 entornos  
     ForosColabSave              -> Para 3 y 6 entornos
-    ForosColabSinRestriccion    -> Para 3 y 6 entornos  Nuevos ajutes, ver [tutorial](https://www.loom.com/share/0a8fe844b2d946f2985226d68390ecb5)
+    ForosColabSinRestriccion    -> Para 3 y 6 entornos  
+  Hubo ajustes en foros, revisar aquí: https://www.loom.com/share/0a8fe844b2d946f2985226d68390ecb5
     
 #### 3. Entorno de evaluación [vídeo tutorial](https://www.loom.com/share/14f889467c5f42cb84fcb6127b49d504)
     Tarea                       -> Solo para 3 entornos
