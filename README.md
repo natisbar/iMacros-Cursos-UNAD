@@ -19,11 +19,10 @@
     6_RedCurso      -> **Sin culminarse**
 
 #### 2. Entorno de aprendizaje [vídeo tutorial](https://www.loom.com/share/ef5deaa3e26b4b1a9ab5e9b83644e4b3)
-###### ForosColabMasivo[vídeo tutorial](https://www.loom.com/share/8834e5e822154b65b7e1e914f2484f78)
-    ForosColab                  -> Para 3 y 6 entornos  
-    ForosColabSave              -> Para 3 y 6 entornos
-    ForosColabSinRestriccion    -> Para 3 y 6 entornos  
-  Hubo ajustes en foros, revisar aquí: https://www.loom.com/share/0a8fe844b2d946f2985226d68390ecb5
+##### 3 ENTORNOS
+###### ForosColabMasivo [vídeo tutorial](https://www.loom.com/share/8834e5e822154b65b7e1e914f2484f78)
+###### ForosColabIndivi [vídeo tutorial](https://www.loom.com/share/8211d5d9662743a882855624be7b4abc)
+        Ya no es necesaria una macro extra para guardar los ajustes del foro.
     
 #### 3. Entorno de evaluación [vídeo tutorial](https://www.loom.com/share/14f889467c5f42cb84fcb6127b49d504)
     Tarea                       -> Solo para 3 entornos
