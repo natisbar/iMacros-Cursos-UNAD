@@ -21,7 +21,7 @@
   
 
 #### 2. Entorno de aprendizaje 
-###### ForosColabMasivo [vídeo tutorial](https://www.loom.com/share/8834e5e822154b65b7e1e914f2484f78) -> Solo 3 entornos
+###### ForosColabMasivo [vídeo tutorial](https://www.loom.com/share/d22dd189f1114ae6be4789d785c4cf2c) -> Solo 3 entornos
 ###### ForosColabIndivi [vídeo tutorial](https://www.loom.com/share/8211d5d9662743a882855624be7b4abc) -> Solo 3 entornos
 ###### ForosColabMasivo6Entor             -> Solo 6 entornos. Misma instrucción de ejecución que la de 3 entornos
 ###### ForosColabIndivi6Entor             -> Solo 6 entornos. Misma instrucción de ejecución que la de 3 entornos
