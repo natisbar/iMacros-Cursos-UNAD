@@ -1,4 +1,6 @@
+SET !EXTRACT_TEST_POPUP NO
 SET !ERRORIGNORE YES
+TAG POS={{!LOOP}} TYPE=A ATTR=TXT:Foro<SP>de<SP>*<SP>-<SP>* EXTRACT=TXT
 TAG POS={{!LOOP}} TYPE=A ATTR=TXT:Foro<SP>de<SP>*<SP>-<SP>*
 WAIT SECONDS=2
 TAG POS=1 TYPE=A ATTR=TXT:Editar<SP>ajustes
@@ -20,7 +22,7 @@ TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_blockperiod CONTENT=%0
 TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_assessed CONTENT=%0
 TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_visible CONTENT=%1
 TAG POS=1 TYPE=SELECT FORM=ID:mform1 ATTR=ID:id_groupmode CONTENT=%1
-PROMPT "Pegue hasta: " !VAR1
+PROMPT "{{!EXTRACT}} Pegue hasta: " !VAR1
 SET !VAR2 EVAL("var aux=\"{{!VAR1}}\"; var arrayfecha=aux.split(\"/\");var mes=arrayfecha[1]; if(mes == \"ENE\") 1; else if(mes == \"FEB\") 2; else if(mes == \"MAR\") 3; else if(mes == \"ABR\") 4; else if(mes == \"MAY\") 5; else if(mes == \"JUN\") 6; else if(mes == \"JUL\") 7; else if(mes == \"AGO\") 8; else if(mes == \"SEP\") 9; else if(mes == \"OCT\") 10; else if(mes == \"NOV\") 11; else if(mes == \"DIC\") 12; else mes=arrayfecha[1];")
 SET !VAR3 EVAL("var aux=\"{{!VAR1}}\"; var arrayfecha=aux.split(\"/\");var año=arrayfecha[2].split(\" \"); año[0];")
 SET !VAR1 EVAL("var aux=\"{{!VAR1}}\"; var arrayfecha=aux.split(\"/\");var dia=parseInt(arrayfecha[0],10); dia")
