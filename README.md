@@ -10,9 +10,10 @@
 ### Cómo debo ejecutar cada iMacro
 #### 1. Entorno Inicial
   ##### Restricciones: [vídeo tutorial](https://www.loom.com/share/86a52e5c736a46a8a9321e26ce3d6772)
-    1_Agenda        -> Solo para 3 entornos
-    2_Presentacion  -> Solo para 3 entornos
-    3_Normas        -> Solo para 3 entornos
+    1_EditarCurso   -> Solo para 3 entornos - configura tamaño img entornos, idioma forzado, entre otras configuraciones (de acuerdo con lineamientos)
+    2_Agenda        -> Solo para 3 entornos
+    3_Presentacion  -> Solo para 3 entornos
+    4_Normas        -> Solo para 3 entornos
   ##### Foros:
     4_ForoNoticias  -> Misma ejecución como en agenda/presentación/normas -> Recuerde que el nombre del foro debe estar bien escrito "Foro noticias de curso"
     5_ForoGeneral 	-> Misma ejecución como en agenda/presentación/normas -> Recuerde que el nombre del foro debe estar bien escrito "Foro general del curso"
@@ -21,10 +22,12 @@
   
 
 #### 2. Entorno de aprendizaje 
-###### ForosColabMasivo [vídeo tutorial](https://www.loom.com/share/d22dd189f1114ae6be4789d785c4cf2c) -> Solo 3 entornos
-###### ForosColabIndivi [vídeo tutorial](https://www.loom.com/share/8211d5d9662743a882855624be7b4abc) -> Solo 3 entornos
+###### ForosColabMasivo     [vídeo tutorial](https://www.loom.com/share/d22dd189f1114ae6be4789d785c4cf2c) -> Solo 3 entornos
+###### ForosColabIndivi     [vídeo tutorial](https://www.loom.com/share/8211d5d9662743a882855624be7b4abc) -> Solo 3 entornos
+###### AbrirCarpetasGuías   [vídeo tutorial](https://www.loom.com/share/dfb3a8246012482b9a085653fcc3a81c) -> 3 y 6 entornos              
 ###### ForosColabMasivo6Entor             -> Solo 6 entornos. Misma instrucción de ejecución que la de 3 entornos
 ###### ForosColabIndivi6Entor             -> Solo 6 entornos. Misma instrucción de ejecución que la de 3 entornos
+
 
      Ya no es necesaria una macro extra para guardar los ajustes del foro.
     
