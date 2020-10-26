@@ -10,4 +10,7 @@ SET !EXTRACT NULL
 TAB OPEN NEW
 TAB T=2
 URL GOTO={{!VAR1}}
+WAIT SECONDS=0.5
+'TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
+TAG POS=1 TYPE=A ATTR=TXT:*gu*a<SP>de<SP>actividades*.pdf
 WAIT SECONDS=1
