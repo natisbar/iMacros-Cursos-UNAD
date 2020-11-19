@@ -1,6 +1,6 @@
 SET !EXTRACT_TEST_POPUP NO
 'SET !TIMEOUT_STEP 0
-'SET !ERRORIGNORE YES
+SET !ERRORIGNORE YES
 
 TAB T=1
 TAG POS={{!LOOP}} TYPE=A ATTR=TXT:*entrega<SP>de<SP>la<SP>actividad* EXTRACT=HREF
@@ -10,10 +10,12 @@ SET !EXTRACT NULL
 'SET !VAR2 {{!LOOP}}
 
 TAB OPEN NEW
-'ADD !VAR2 1
-'TAB T={{!VAR2}}
 TAB T=2
 URL GOTO={{!VAR1}}
-WAIT SECONDS=1
+WAIT SECONDS=0.5
 TAG POS=1 TYPE=A ATTR=TXT:Editar<SP>ajustes
-WAIT SECONDS=0.4
+WAIT SECONDS=5
+TAG POS=1 TYPE=A ATTR=TXT:*gu*a<SP>de<SP>actividades*.pdf
+TAG XPATH="//button[@class='fp-file-delete']"
+TAG XPATH="//button[@class='fp-dlg-butconfirm btn-primary btn']"
+WAIT SECONDS=1
