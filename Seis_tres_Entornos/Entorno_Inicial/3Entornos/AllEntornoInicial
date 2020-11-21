@@ -1,0 +1,24 @@
+'SET !EXTRACT_TEST_POPUP NO
+TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
+SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"ES\"; else if(aux == \"INITIALINFORMATION\") aux=\"EN\";  else MacroError(\"No se determinó idioma\"); var aux2=\"\"; var recurso=\"{{!LOOP}}\"; if(aux==\"ES\"){if(recurso==1)aux2=\"Agenda<SP>del<SP>curso<SP>*\"; else if(recurso==2)aux2=\"Presentaci*n<SP>del<SP>curso<SP>*\"; else if(recurso==3)aux2=\"Normas<SP>y<SP>condiciones<SP>*\"; else if(recurso==4)aux2=\"*noticias<SP>del<SP>curso*\"; else if(recurso==5)aux2=\"*<SP>general<SP>del<SP>curso\"; else if(recurso==6)aux2=\"*Red<SP>de<SP>curso*\"; else if(recurso==7)aux2=\"*v*a<SP>webconferencia*\"; else if(recurso==8)aux2=\"*v*a<SP>skype*\";} else if(aux==\"EN\"){if(recurso==1)aux2=\"Course<SP>agenda<SP>*\"; else if(recurso==2) aux2=\"Course<SP>presentation<SP>*\"; else if(recurso==3) aux2=\"Rules<SP>and<SP>conditions<SP>*\"; else if(recurso==4) aux2=\"Course<SP>news*\"; else if(recurso==5) aux2=\"Course*s<SP>general*\"; else if(recurso==6) aux2=\"*Course<SP>Network*\"; else if(recurso==7) aux2=\"*by<SP>webconference*\"; else if(recurso==8) aux2=\"*by<SP>skype*\";} else MacroError(\"No se determinó idioma\");")
+SET !EXTRACT NULL
+SET !VAR1 EVAL("({{!LOOP}} != 2 ) ? '2' : '5';")
+TAG POS=1 TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF 
+SET !VAR2 {{!EXTRACT}}
+SET !EXTRACT NULL
+
+TAB OPEN NEW
+TAB T=2
+URL GOTO={{!VAR2}}
+WAIT SECONDS= 0.5
+TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
+SET !VAR2 {{!EXTRACT}}
+SET !EXTRACT NULL
+URL GOTO={{!VAR2}}
+WAIT SECONDS= {{!VAR1}}	
+SET !VAR1 EVAL("({{!LOOP}} != 2 ) ? '2' : '13';")
+TAG POS=1 TYPE=A ATTR=ID:buttonconfig CONTENT={ENTER}
+WAIT SECONDS= {{!VAR1}}
+TAG POS=1 TYPE=A ATTR=ID:buttonconfig CONTENT={ENTER}
+WAIT SECONDS= 1
+TAB T=1
