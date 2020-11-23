@@ -3,7 +3,8 @@ TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
 SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"Foro<SP>de<SP>*<SP>-<SP>*\"; else if(aux == \"INITIALINFORMATION\") aux=\"Discussion<SP>forum<SP>-<SP>*\";  else MacroError(\"No se determinó idioma\");")
 SET !EXTRACT NULL
 TAG POS={{!LOOP}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
-SET !VAR3 EVAL("var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") MacroError(\"No hay mas foros\"); aux;")
+URL GOTO=javascript:location.reload();
+SET !VAR3 EVAL("var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\"){alert(\"No hay mas foros\"); MacroError(\"No hay mas foros\")}; aux;")
 
 TAB OPEN NEW
 TAB T=2
