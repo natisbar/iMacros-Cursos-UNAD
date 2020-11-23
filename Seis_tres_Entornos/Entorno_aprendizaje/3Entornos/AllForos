@@ -1,0 +1,20 @@
+'SET !EXTRACT_TEST_POPUP NO
+TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
+SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"Foro<SP>de<SP>*<SP>-<SP>*\"; else if(aux == \"INITIALINFORMATION\") aux=\"Discussion<SP>forum<SP>-<SP>*\";  else MacroError(\"No se determinó idioma\");")
+SET !EXTRACT NULL
+TAG POS={{!LOOP}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
+SET !VAR3 EVAL("var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") MacroError(\"No hay mas foros\"); aux;")
+
+TAB OPEN NEW
+TAB T=2
+URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
+WAIT SECONDS= 2
+TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
+URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
+WAIT SECONDS=2
+'TAG POS=1 TYPE=A ATTR=ID:runforum CONTENT={ENTER}
+TAG XPATH="//div[@class='iconos_container']/a[2]/img" CONTENT={ENTER}
+WAIT SECONDS=2
+TAB T=1
