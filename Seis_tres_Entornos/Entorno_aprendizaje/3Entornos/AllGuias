@@ -6,7 +6,7 @@ SET !EXTRACT NULL
 SET !VAR3 EVAL("var aux; if(\"{{!LOOP}}\"==1) aux=1; else aux=\"{{!LOOP}}\"-1;aux;")
 SET !VAR2 EVAL("var aux=\"{{!VAR2}}\"; if(\"{{!LOOP}}\"==1) aux=\"*yllabus*\"; else aux; aux;")
 TAG POS={{!VAR3}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
-SET !VAR3 EVAL("var num=\"{{!EXTRACT}}\"-1; var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") MacroError(\"No hay mas guías\"); aux;")
+SET !VAR3 EVAL("var num=\"{{!EXTRACT}}\"-1; var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") {alert(\"No hay mas guías, IMPORTANTE: Si alguna carpeta de la guía de actividades no abrió, por favor verifique que el nombre y los guiones (guiones cortos) sean los correctos\"); MacroError(\"No hay mas guías, RECUERDE: Si hay alguna carpeta de la guía de actividades que no abre, por favor verifique que el nombre y los guiones (guiones cortos) sean los correctos\");} aux;")
 
 TAB OPEN NEW
 TAB T=2
@@ -20,7 +20,7 @@ SET !EXTRACT NULL
 TAG XPATH="//section[@id='region-main']/div[1]/h2" EXTRACT=TXT
 SET !VAR2 {{!EXTRACT}}
 SET !EXTRACT NULL
-SET !VAR3 EVAL("var guia=\"{{!VAR3}}\"; var nameguia=\"{{!VAR2}}\"; if(guia==\"#EANF#\") {alert(\"El recurso \"+ nameguia +\" no tiene la guía en pdf o su nombre dista demasiado de lo indicado en lineamientos\"); MacroError(\"El recurso \"+ nameguia +\" no tiene la guía en pdf o su nombre no está de acuerdo con lineamientos\")}; guia;")
+SET !VAR3 EVAL("var guia=\"{{!VAR3}}\"; var nameguia=\"{{!VAR2}}\"; if(guia==\"#EANF#\") {alert(\"El recurso \"+ nameguia +\" no tiene la guía en pdf o su nombre dista demasiado de lo indicado en lineamientos\"); MacroError(\"El recurso \"+ nameguia +\" no tiene la guía en pdf o su nombre dista demasiado de lo indicado en lineamientos\")}; guia;")
 TAG XPATH="//div[@class='box generalbox folderbuttons']/div[2]/form/div/input[1]" CONTENT={ENTER}
 WAIT SECONDS= 2
 TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}}
