@@ -1,4 +1,4 @@
-SET !EXTRACT_TEST_POPUP NO
+'SET !EXTRACT_TEST_POPUP NO
 TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
 SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"*Gu*a*y<SP>r*brica<SP>de<SP>evaluaci*n<SP>-*\"; else if(aux == \"INITIALINFORMATION\") aux=\"*guide<SP>and<SP>evaluation<SP>rubric<SP>-*\";  else MacroError(\"No se determinó idioma\");")
 SET !VAR1 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); aux;")
@@ -11,16 +11,29 @@ TAB T=2
 URL GOTO={{!EXTRACT}}
 SET !EXTRACT NULL
 WAIT SECONDS= 1
-SET !VAR1 EVAL("var aux=\"{{!VAR1}}\"; if(aux == \"INFORMACIÓNINICIAL\") var aux2=\"*gu*a*y<SP>r*brica<SP>de<SP>evaluaci*n<SP>-*.pdf*\"; else if(aux == \"INITIALINFORMATION\") var aux2=\"*guide<SP>and<SP>evaluation<SP>rubric<SP>-*.pdf*\"; aux2;")
+SET !VAR1 EVAL("var aux=\"{{!VAR1}}\"; if(aux == \"INFORMACIÓNINICIAL\") var aux2=\"*u*a*r*brica*.pdf*\"; else if(aux == \"INITIALINFORMATION\") var aux2=\"*uide*valuation*ubric*.pdf*\"; aux2;")
 TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}} EXTRACT=HREF
 SET !VAR3 {{!EXTRACT}}
 SET !EXTRACT NULL
 TAG XPATH="//section[@id='region-main']/div[1]/h2" EXTRACT=TXT
-SET !VAR3 EVAL("var guia=\"{{!VAR3}}\"; var nameguia=\"{{!EXTRACT}}\"; if(guia==\"#EANF#\") {alert(\"El recurso \"+ nameguia +\" no tiene la guía en pdf o su nombre no está de acuerdo con lineamientos\"); MacroError(\"El recurso {{!EXTRACT}} no tiene la guía en pdf o su nombre no está de acuerdo con lineamientos\")}; guia;")
+SET !VAR2 {{!EXTRACT}}
 SET !EXTRACT NULL
+SET !VAR3 EVAL("var guia=\"{{!VAR3}}\"; var nameguia=\"{{!VAR2}}\"; if(guia==\"#EANF#\") {alert(\"El recurso \"+ nameguia +\" no tiene la guía en pdf o su nombre dista demasiado de lo indicado en lineamientos\"); MacroError(\"El recurso \"+ nameguia +\" no tiene la guía en pdf o su nombre no está de acuerdo con lineamientos\")}; guia;")
+TAG XPATH="//div[@class='box generalbox folderbuttons']/div[2]/form/div/input[1]" CONTENT={ENTER}
+WAIT SECONDS= 2
+TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}}
+WAIT SECONDS= 0.5
+SET !VAR2 EVAL("var ext='.pdf'; var aux=\"{{!VAR2}}\"; aux=aux.concat(ext);")
+PROMPT {{!VAR2}}
+TAG XPATH="//div[@class='fp-forminset']/div[1]/div[1]/input[1]" CONTENT={{!VAR2}}
+TAG XPATH="//button[@class='fp-file-update btn-primary btn']"
+WAIT SECONDS= 0.1
+TAG POS=1 TYPE=INPUT ATTR=ID:id_submitbutton CONTENT={ENTER}
+WAIT SECONDS= 2
 TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}}
 WAIT SECONDS= 0.5
 TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
 URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
 WAIT SECONDS=2
 TAB T=1
