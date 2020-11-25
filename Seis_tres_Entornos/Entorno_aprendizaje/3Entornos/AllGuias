@@ -24,7 +24,6 @@ WAIT SECONDS= 2
 TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}}
 WAIT SECONDS= 0.5
 SET !VAR2 EVAL("var ext='.pdf'; var aux=\"{{!VAR2}}\"; aux=aux.concat(ext);")
-PROMPT {{!VAR2}}
 TAG XPATH="//div[@class='fp-forminset']/div[1]/div[1]/input[1]" CONTENT={{!VAR2}}
 TAG XPATH="//button[@class='fp-file-update btn-primary btn']"
 WAIT SECONDS= 0.1
