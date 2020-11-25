@@ -1,9 +1,12 @@
-SET !EXTRACT_TEST_POPUP NO
+'SET !EXTRACT_TEST_POPUP NO
 TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
 SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"*Gu*a*y<SP>r*brica<SP>de<SP>evaluaci*n<SP>-*\"; else if(aux == \"INITIALINFORMATION\") aux=\"*guide<SP>and<SP>evaluation<SP>rubric<SP>-*\";  else MacroError(\"No se determinó idioma\");")
 SET !VAR1 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); aux;")
 SET !EXTRACT NULL
-TAG POS={{!LOOP}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
+SET !VAR3 EVAL("var aux; if(\"{{!LOOP}}\"==1) aux=1; else aux=\"{{!LOOP}}\"-1;aux;")
+SET !VAR2 EVAL("var aux=\"{{!VAR2}}\"; if(\"{{!LOOP}}\"==1) aux=\"*yllabus*\"; else aux; aux;")
+PROMPT {{!VAR3}}
+TAG POS={{!VAR3}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
 SET !VAR3 EVAL("var num=\"{{!EXTRACT}}\"-1; var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") MacroError(\"No hay mas guías\"); aux;")
 
 TAB OPEN NEW
@@ -11,7 +14,7 @@ TAB T=2
 URL GOTO={{!EXTRACT}}
 SET !EXTRACT NULL
 WAIT SECONDS= 1
-SET !VAR1 EVAL("var aux=\"{{!VAR1}}\"; if(aux == \"INFORMACIÓNINICIAL\") var aux2=\"*u*a*r*brica*.pdf*\"; else if(aux == \"INITIALINFORMATION\") var aux2=\"*uide*valuation*ubric*.pdf*\"; aux2;")
+SET !VAR1 EVAL("var aux=\"{{!VAR1}}\"; if(aux == \"INFORMACIÓNINICIAL\" && \"{{!LOOP}}\"!= 1) var aux2=\"*u*a*r*brica*.pdf*\"; else if(aux == \"INITIALINFORMATION\" && \"{{!LOOP}}\" != 1) var aux2=\"*uide*valuation*ubric*.pdf*\"; else aux2=\"*yllabus*.pdf*\"; aux2;")
 TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}} EXTRACT=HREF
 SET !VAR3 {{!EXTRACT}}
 SET !EXTRACT NULL
