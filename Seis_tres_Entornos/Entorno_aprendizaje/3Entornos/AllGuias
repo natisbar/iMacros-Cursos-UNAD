@@ -5,7 +5,6 @@ SET !VAR1 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); aux;"
 SET !EXTRACT NULL
 SET !VAR3 EVAL("var aux; if(\"{{!LOOP}}\"==1) aux=1; else aux=\"{{!LOOP}}\"-1;aux;")
 SET !VAR2 EVAL("var aux=\"{{!VAR2}}\"; if(\"{{!LOOP}}\"==1) aux=\"*yllabus*\"; else aux; aux;")
-PROMPT {{!VAR3}}
 TAG POS={{!VAR3}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
 SET !VAR3 EVAL("var num=\"{{!EXTRACT}}\"-1; var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") MacroError(\"No hay mas guías\"); aux;")
 
