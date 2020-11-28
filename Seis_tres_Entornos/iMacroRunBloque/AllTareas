@@ -1,0 +1,27 @@
+SET !EXTRACT_TEST_POPUP NO
+SET !ERRORIGNORE NO
+TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
+SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"*entrega<SP>de<SP>la<SP>actividad*\"; else if(aux == \"INITIALINFORMATION\") aux=\"*activity<SP>submission*\";  else MacroError(\"No se determinó idioma\");")
+SET !VAR1 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); aux;")
+SET !EXTRACT NULL
+TAG POS={{!LOOP}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
+SET !VAR3 EVAL("var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") {alert(\"No hay mas tareas, IMPORTANTE: Si alguna tarea no abrió, por favor verifique que el nombre y los guiones (guiones cortos) sean los correctos\"); MacroError(\"No hay mas tareas, RECUERDE: Si hay alguna tarea que no abre, por favor verifique que el nombre y los guiones (guiones cortos) sean los correctos\");} aux;")
+
+TAB OPEN NEW
+TAB T=2
+URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
+WAIT SECONDS= 2
+TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
+URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
+WAIT SECONDS=5
+SET !VAR1 EVAL("var aux=\"{{!VAR1}}\"; if(aux == \"INFORMACIÓNINICIAL\") var aux2=\"*u*a*r*brica*.pdf*\"; else if(aux == \"INITIALINFORMATION\") var aux2=\"*uide*valuation*ubric*.pdf*\"; aux2;")
+SET !ERRORIGNORE YES
+TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}} EXTRACT=HREF
+SET !VAR3 EVAL("var guia=\"{{!EXTRACT}}\"; if(guia==\"#EANF#\") {alert(\"la tarea no tiene la guía en pdf o su nombre dista demasiado de lo indicado en lineamientos\");} guia;")
+TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}}
+TAG XPATH="//button[@class='fp-file-delete']"
+TAG XPATH="//button[@class='fp-dlg-butconfirm btn-primary btn']"
+WAIT SECONDS=2
+TAB T=1
