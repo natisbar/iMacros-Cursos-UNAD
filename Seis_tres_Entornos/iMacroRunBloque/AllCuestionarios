@@ -1,0 +1,21 @@
+SET !EXTRACT_TEST_POPUP NO
+TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
+SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"*Cuestionario<SP>de<SP>evaluaci*n\"; else if(aux == \"INITIALINFORMATION\") aux=\"*Evaluation<SP>quiz*\";  else MacroError(\"No se determinó idioma\");")
+SET !EXTRACT NULL
+TAG POS={{!LOOP}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
+SET !VAR3 EVAL("var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") {alert(\"No hay mas cuestionarios, IMPORTANTE: Si algún cuestionario no abrió, por favor verifique que el nombre esté de acuerdo con lineamientos\"); MacroError(\"No hay mas cuestionarios, IMPORTANTE: Si algun cuestionario no abrió, por favor verifique que el nombre esté de acuerdo con lineamientos\");} aux;")
+
+TAB OPEN NEW
+TAB T=2
+URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
+WAIT SECONDS= 2
+TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
+URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
+WAIT SECONDS=4
+TAG POS=1 TYPE=INPUT:CHECKBOX ATTR=ID:6entornos CONTENT=NO
+TAG POS=1 TYPE=INPUT:CHECKBOX ATTR=ID:3entornos CONTENT=YES
+TAG POS=1 TYPE=IMG ATTR=ID:id_runquiz CONTENT={ENTER}
+WAIT SECONDS=2
+TAB T=1
