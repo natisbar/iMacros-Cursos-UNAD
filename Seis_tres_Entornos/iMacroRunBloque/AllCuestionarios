@@ -1,6 +1,6 @@
 SET !EXTRACT_TEST_POPUP NO
 TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
-SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"*Cuestionario<SP>de<SP>evaluaci*n\"; else if(aux == \"INITIALINFORMATION\") aux=\"*Evaluation<SP>quiz*\";  else MacroError(\"No se determinó idioma\");")
+SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"*-*uestionario<SP>de<SP>evaluaci*n*\"; else if(aux == \"INITIALINFORMATION\") aux=\"*-*valuation*quiz*\";  else MacroError(\"No se determinó idioma\");")
 SET !EXTRACT NULL
 TAG POS={{!LOOP}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
 SET !VAR3 EVAL("var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") {alert(\"No hay mas cuestionarios, IMPORTANTE: Si algún cuestionario no abrió, por favor verifique que el nombre esté de acuerdo con lineamientos\"); MacroError(\"No hay mas cuestionarios, IMPORTANTE: Si algun cuestionario no abrió, por favor verifique que el nombre esté de acuerdo con lineamientos\");} aux;")
