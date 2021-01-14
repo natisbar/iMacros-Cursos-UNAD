@@ -1,0 +1,16 @@
+SET !VAR1 "CODIGOS"
+SET !VAR2 EVAL("var position=\"{{!LOOP}}\"-1; var array1=\"{{!VAR1}}\"; obj = JSON.parse(array1); var cod = obj[position]; cod;")
+'PROMPT {{!VAR2}}
+
+TAG XPATH="//div[@id='div_p140']/label[2]/input[@name='unad40consec']" CONTENT={{!VAR2}}
+'TAG POS=1 TYPE=TEXT FORM=ID:* ATTR=ID:unad40consec CONTENT={{!VAR2}}
+TAG POS=1 TYPE=SELECT FORM=ID:frmedita ATTR=ID:unad40tipostandard CONTENT=%4
+WAIT SECONDS=2
+TAG POS=1 TYPE=SELECT FORM=ID:frmedita ATTR=ID:unad40tipostandard CONTENT=%4
+WAIT SECONDS=0.5
+TAG POS=1 TYPE=SELECT FORM=ID:frmedita ATTR=ID:unad40idevaluacion CONTENT=%59
+TAG POS=1 TYPE=SELECT FORM=ID:frmedita ATTR=ID:unad40idrubricacertifica CONTENT=%60
+TAG POS=1 TYPE=INPUT:BUTTON FORM=ID:frmedita ATTR=ID:cmdGuardar
+WAIT SECONDS=1
+TAG POS=1 TYPE=INPUT:BUTTON FORM=ID:frmedita ATTR=ID:cmdLimpiar
+WAIT SECONDS=2
