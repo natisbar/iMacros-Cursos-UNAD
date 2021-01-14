@@ -1,2 +1,2 @@
 - Excel para el formato: https://docs.google.com/spreadsheets/d/1YvaZRqKKWE8SrZUanppABnLus8OFsABz/edit#gid=1009438559
-- Vídeo explicativo de cómo usar la macro de EstandarMasivo: https://www.loom.com/share/bc6c188388cd4eaea2b72125924564db
+- Vídeo explicativo de cómo usar la macro de EstandarMasivo: https://www.loom.com/share/d51dc913a45743c1b11e6b988ae27557
