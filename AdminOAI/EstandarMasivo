@@ -1,6 +1,6 @@
-SET !VAR1 "CODIGOS"
-SET !VAR2 EVAL("var position=\"{{!LOOP}}\"-1; var array1=\"{{!VAR1}}\"; obj = JSON.parse(array1); var cod = obj[position]; cod;")
-'PROMPT {{!VAR2}}
+SET !VAR1 EVAL("var position=\"{{!LOOP}}\"; if(position==1){var aux = prompt(\"Ingrese cursos\", \"[126022,107063,102022]\");} else aux=\"{{!CLIPBOARD}}\"; aux;")
+SET !CLIPBOARD {{!VAR1}}
+SET !VAR2 EVAL("var position=\"{{!LOOP}}\"-1; var array1=\"{{!CLIPBOARD}}\"; obj = JSON.parse(array1); var cod = obj[position]; cod;")
 
 TAG XPATH="//div[@id='div_p140']/label[2]/input[@name='unad40consec']" CONTENT={{!VAR2}}
 'TAG POS=1 TYPE=TEXT FORM=ID:* ATTR=ID:unad40consec CONTENT={{!VAR2}}
