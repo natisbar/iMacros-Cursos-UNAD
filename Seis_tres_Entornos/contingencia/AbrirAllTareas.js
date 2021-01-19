@@ -1,6 +1,6 @@
 var aTags = document.getElementsByTagName("a");
 var searchText = "TAREA";
-//var searchText2 = \"Rúbrica de evaluación y entrega de la actividad\";
+var searchText2 = "ASSIGNMENT";
 var found = [];
 var found2 = [];
 var found3 = [];
@@ -23,14 +23,18 @@ if (found[i].childNodes.length==2 && found[i].childNodes[1].childNodes.length==2
 }
 
 for (var i = 0; i < found2.length; i++) {
-if (found2[i].childNodes[1].childNodes[1].innerText.replace(/ /g,"").toUpperCase() == searchText) {
+if (found2[i].childNodes[1].childNodes[1].innerText.replace(/ /g,"").toUpperCase() == searchText || found2[i].childNodes[1].childNodes[1].innerText.replace(/ /g,"").toUpperCase() == searchText2) {
 	found3[contar3] = found2[i];
 	contar3++;
 }
 }
 
 for (var i = 0; i < found3.length; i++) {
+    var textedit = "course/modedit.php?update=";
     var m_edicion = found3[i].getAttribute("href");
+    var fin = m_edicion.indexOf("mod");
+    var Textinicio = m_edicion.slice(0, fin);
+    var Actid = m_edicion.slice(m_edicion.indexOf("id=")+3,m_edicion.length);
+    m_edicion = Textinicio.concat(textedit, Actid)
     window.open(m_edicion)
-
 }
