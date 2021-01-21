@@ -1,0 +1,50 @@
+SET !VAR1 EVAL("var position=\"{{!LOOP}}\"; if(position==1){var aux = prompt(\"Ingrese cursos\", \"[126022,107063,102022]\");} else aux=\"{{!CLIPBOARD}}\"; aux;")
+SET !CLIPBOARD {{!VAR1}}
+SET !VAR2 EVAL("var position=\"{{!LOOP}}\"-1; var array1=\"{{!CLIPBOARD}}\"; obj = JSON.parse(array1); var cod = obj[position]; cod;")
+URL GOTO=https://aurea2.unad.edu.co/oai/ofercampus.php
+WAIT SECONDS=2
+TAG XPATH="//input[@name='bcodcurso']" CONTENT={{!VAR2}}
+WAIT SECONDS=2
+TAG XPATH="//div[@id='div_f1707detalle']/table[1]/tbody[1]/tr[3]/td[5]/a" 
+WAIT SECONDS=2
+TAG POS=1 TYPE=A ATTR=TXT:Acceder<SP>al<SP>curso CONTENT={ENTER}
+WAIT SECONDS=4
+TAG XPATH="//div[@id='page-navbar']/div[2]/div[1]/form[1]/div[1]/input[1]" CONTENT={ENTER}
+WAIT SECONDS=7
+TAG XPATH="//div[@id='openAllHomeworksId']" CONTENT={ENTER}
+TAB T=3
+WAIT SECONDS= 7
+'TAG XPATH="//div[@class='iconos_container']/a[3]/img" CONTENT={ENTER}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:mform1 ATTR=ID:id_submitbutton
+WAIT SECONDS= 4
+TAB CLOSE
+TAB T=3
+WAIT SECONDS= 2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:mform1 ATTR=ID:id_submitbutton
+WAIT SECONDS= 4
+TAB CLOSE
+TAB T=3
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:mform1 ATTR=ID:id_submitbutton
+WAIT SECONDS= 4
+TAB CLOSE
+SET !ERRORIGNORE YES
+TAB T=3
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:mform1 ATTR=ID:id_submitbutton
+WAIT SECONDS= 4
+TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[10]/p/a" EXTRACT=TXT
+URL GOTO=javascript:if("{{!EXTRACT}}"!="Restaurar"&&"{{!EXTRACT}}"!="Restore")window.close();
+SET !EXTRACT NULL
+TAB T=3
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:mform1 ATTR=ID:id_submitbutton
+WAIT SECONDS= 4
+TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[10]/p/a" EXTRACT=TXT
+URL GOTO=javascript:if("{{!EXTRACT}}"!="Restaurar"&&"{{!EXTRACT}}"!="Restore")window.close();
+SET !EXTRACT NULL
+TAB T=3
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:mform1 ATTR=ID:id_submitbutton
+WAIT SECONDS= 4
+TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[10]/p/a" EXTRACT=TXT
+URL GOTO=javascript:if("{{!EXTRACT}}"!="Restaurar"&&"{{!EXTRACT}}"!="Restore")window.close();
+SET !EXTRACT NULL
+URL GOTO=javascript:window.close();
+WAIT SECONDS= 1
