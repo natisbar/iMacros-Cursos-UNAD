@@ -14,7 +14,6 @@ WAIT SECONDS=7
 TAG XPATH="//div[@id='openAllHomeworksId']" CONTENT={ENTER}
 TAB T=3
 WAIT SECONDS= 7
-'TAG XPATH="//div[@class='iconos_container']/a[3]/img" CONTENT={ENTER}
 TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:mform1 ATTR=ID:id_submitbutton
 WAIT SECONDS= 4
 TAB CLOSE
