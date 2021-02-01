@@ -12,7 +12,7 @@ TAB T=2
 URL GOTO={{!EXTRACT}}
 SET !EXTRACT NULL
 WAIT SECONDS= 2
-SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"Editar<SP>ajustes"; else if(aux == \"INITIALINFORMATION\") aux=\"Edit<SP>settings\";  else MacroError(\"No se determinó idioma\");")
+SET !VAR2 EVAL("var aux=\"{{!VAR1}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"Editar<SP>ajustes"; else if(aux == \"INITIALINFORMATION\") aux=\"Edit<SP>settings\";  else MacroError(\"No se determinó idioma\");")
 TAG POS={{!LOOP}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
 'TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
 URL GOTO={{!EXTRACT}}
