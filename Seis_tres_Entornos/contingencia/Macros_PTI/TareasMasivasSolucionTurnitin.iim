@@ -1,0 +1,22 @@
+SET !ERRORIGNORE NO
+TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
+SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"*entrega<SP>de<SP>la<SP>actividad*\"; else if(aux == \"INITIALINFORMATION\") aux=\"*activity<SP>submission*\";  else MacroError(\"No se determinó idioma\");")
+SET !VAR1 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); aux;")
+SET !EXTRACT NULL
+TAG POS={{!LOOP}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
+SET !VAR3 EVAL("var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") {alert(\"No hay mas tareas, IMPORTANTE: Si alguna tarea no abrió, por favor verifique que el nombre y los guiones (guiones cortos) sean los correctos\"); MacroError(\"No hay mas tareas, RECUERDE: Si hay alguna tarea que no abre, por favor verifique que el nombre y los guiones (guiones cortos) sean los correctos\");} aux;")
+
+TAB OPEN NEW
+TAB T=2
+URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
+WAIT SECONDS= 2
+TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
+URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
+WAIT SECONDS=3
+'TAG XPATH="//div[@class='iconos_container']/a[3]/img" CONTENT={ENTER}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:mform1 ATTR=ID:id_submitbutton
+WAIT SECONDS=2
+TAB CLOSE
+TAB T=1
