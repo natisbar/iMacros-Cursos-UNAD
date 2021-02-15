@@ -1,8 +1,7 @@
 SET !EXTRACT_TEST_POPUP NO
 
 TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
-SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"Reiniciar\"; else if(aux == \"INITIALINFORMATION\") aux=\"Reset\";  else MacroError(\"No se determinó idioma\");")
-SET !VAR1 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"Continuar*\"; else if(aux == \"INITIALINFORMATION\") aux=\"Continue*\";  else MacroError(\"No se determinó idioma\");")
+SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"Reiniciar\"; else if(aux == \"INITIALINFORMATION\") aux=\"Reset\";  else if(aux == \"INFORMATIONINITIALE\") aux=\"Réinitialiser\"; else MacroError(\"No se determinó idioma\");")
 SET !EXTRACT NULL
 TAB T=1
 TAG POS=1 TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
