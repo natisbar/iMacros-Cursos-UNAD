@@ -19,9 +19,11 @@ SET !EXTRACT NULL
 URL GOTO={{!VAR2}}
 WAIT SECONDS= {{!VAR1}}	
 SET !VAR1 EVAL("({{!LOOP}} != 2 ) ? '4' : '14';")
-TAG POS=1 TYPE=A ATTR=ID:buttonconfig CONTENT={ENTER}
+TAG XPATH="//div[@id='courseReviewPanel']/div[1]/button" CONTENT={ENTER}
 WAIT SECONDS= {{!VAR1}}
-TAG POS=1 TYPE=A ATTR=ID:buttonconfig CONTENT={ENTER}
-TAG POS=1 TYPE=A ATTR=ID:buttonconfig CONTENT={ENTER}
+SET !ERRORIGNORE YES
+TAG XPATH="//div[@id='courseReviewPanel']/div[1]/button" CONTENT={ENTER}
+SET !ERRORIGNORE NO
+'TAG POS=1 TYPE=A ATTR=ID:courseReviewPanelBtnConfigAndSave CONTENT={ENTER}
 WAIT SECONDS= 1
 TAB T=1

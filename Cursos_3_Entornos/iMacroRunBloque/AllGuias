@@ -23,21 +23,21 @@ TAG XPATH="//section[@id='region-main']/div[1]/h2" EXTRACT=TXT
 SET !VAR2 {{!EXTRACT}}
 SET !EXTRACT NULL
 SET !VAR3 EVAL("var guia=\"{{!VAR3}}\"; var nameguia=\"{{!VAR2}}\"; if(guia==\"#EANF#\") {alert(\"El recurso (\"+ nameguia +\") no tiene la guía en pdf o su nombre dista demasiado de lo indicado en lineamientos, tenga en cuenta que no se va a descargar esta guía\"); MacroError(\"El recurso \"+ nameguia +\" no tiene la guía en pdf o su nombre dista demasiado de lo indicado en lineamientos, tenga en cuenta que no se va a descargar esta guía\")}; guia;")
-TAG XPATH="//div[@class='box generalbox folderbuttons']/div[2]/form/div/input[1]" CONTENT={ENTER}
+TAG XPATH="//section[@id='region-main']/div[1]/div[3]/div[2]/form[1]/button" CONTENT={ENTER}
 WAIT SECONDS= 2
 TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}}
 WAIT SECONDS= 0.5
 SET !VAR2 EVAL("var ext='.pdf'; var aux=\"{{!VAR2}}\"; aux=aux.concat(ext);")
-TAG XPATH="//div[@class='fp-forminset']/div[1]/div[1]/input[1]" CONTENT={{!VAR2}}
-TAG XPATH="//button[@class='fp-file-update btn-primary btn']"
+TAG XPATH="//form[@class='mform clearfix']/div[2]/div[1]/input" CONTENT={{!VAR2}}
+TAG XPATH="//form[@class='mform clearfix']/div[8]/button[1]" CONTENT={ENTER}
 WAIT SECONDS= 0.1
 TAG POS=1 TYPE=INPUT ATTR=ID:id_submitbutton CONTENT={ENTER}
 WAIT SECONDS= 2
 TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}}
 SET !ERRORIGNORE NO
 WAIT SECONDS= 1
-TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
-URL GOTO={{!EXTRACT}}
-SET !EXTRACT NULL
-WAIT SECONDS=3
+'TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
+'URL GOTO={{!EXTRACT}}
+'SET !EXTRACT NULL
+'WAIT SECONDS=3
 TAB T=1

@@ -22,8 +22,9 @@ TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}} EXTRACT=HREF
 SET !VAR3 EVAL("var guia=\"{{!EXTRACT}}\"; if(guia==\"#EANF#\") {alert(\"la tarea no tiene la guía en pdf o su nombre dista demasiado de lo indicado en lineamientos\");} guia;")
 SET !EXTRACT NULL
 TAG POS=1 TYPE=A ATTR=TXT:{{!VAR1}}
-TAG XPATH="//button[@class='fp-file-delete']"
+TAG XPATH="//form[@class='mform clearfix']/div[1]/button[2]" CONTENT={ENTER}
 TAG XPATH="//button[@class='fp-dlg-butconfirm btn-primary btn']"
+SET !ERRORIGNORE NO
 TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[10]/p/a" EXTRACT=HREF
 TAB OPEN NEW
 TAB T=3
