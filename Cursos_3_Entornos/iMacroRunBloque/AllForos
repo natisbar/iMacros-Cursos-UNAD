@@ -1,4 +1,4 @@
-'SET !EXTRACT_TEST_POPUP NO
+SET !EXTRACT_TEST_POPUP NO
 TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
 SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"Foro<SP>de<SP>*<SP>-<SP>*\"; else if(aux == \"INITIALINFORMATION\") aux=\"Discussion<SP>forum<SP>-<SP>*\";  else MacroError(\"No se determinó idioma\");")
 SET !EXTRACT NULL
