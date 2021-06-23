@@ -1,0 +1,22 @@
+SET !EXTRACT_TEST_POPUP NO
+TAG POS=1 TYPE=DIV ATTR=ID:gridsectionname-1 EXTRACT=TXT
+SET !VAR2 EVAL("var aux=\"{{!EXTRACT}}\".replace(/ /g,\"\").toUpperCase(); if(aux == \"INFORMACIÓNINICIAL\") aux=\"*Contenidos<SP>y<SP>referentes<SP>bibliográficos*\"; else if(aux == \"INITIALINFORMATION\") aux=\"*Contents<SP>and<SP>bibliographical<SP>references*\";  else MacroError(\"No se determinó idioma\");")
+SET !EXTRACT NULL
+TAG POS={{!LOOP}} TYPE=A ATTR=TXT:{{!VAR2}} EXTRACT=HREF
+SET !VAR3 EVAL("var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\") {alert(\"No hay mas contenidos y referentes de unidades, IMPORTANTE: Si alguna unidad no abrió, por favor verifique que el nombre esté de acuerdo con lineamientos\"); MacroError(\"contenidos y referentes de unidades, IMPORTANTE: Si alguna unidad no abrió, por favor verifique que el nombre esté de acuerdo con lineamientos\");} aux;")
+
+TAB OPEN NEW
+TAB T=2
+URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
+WAIT SECONDS= 2
+TAG XPATH="//div[@id='settingsnav']/ul[1]/li[1]/ul[1]/li[1]/p/a" EXTRACT=HREF
+URL GOTO={{!EXTRACT}}
+SET !EXTRACT NULL
+WAIT SECONDS=2
+TAG XPATH="//div[@id='adjustLinksPanel']/div[1]/button" CONTENT={ENTER}
+WAIT SECONDS=2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:mform1* ATTR=ID:id_submitbutton
+WAIT SECONDS=3
+TAG XPATH="//button[@id='urlValidatorButton']" CONTENT={ENTER}
+TAB T=1
