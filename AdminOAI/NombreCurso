@@ -1,0 +1,16 @@
+SET !VAR1 EVAL("var position=\"{{!LOOP}}\"; if(position==1){var aux = prompt(\"Ingrese cursos\", \"[126022,107063,102022]\");} else aux=\"{{!CLIPBOARD}}\"; aux;")
+SET !CLIPBOARD {{!VAR1}}
+SET !VAR2 EVAL("var position=\"{{!LOOP}}\"-1; var array1=\"{{!CLIPBOARD}}\"; obj = JSON.parse(array1); var cod = obj[position][0]; cod;")
+SET !VAR3 EVAL("var position=\"{{!LOOP}}\"-1; var array1=\"{{!CLIPBOARD}}\"; obj = JSON.parse(array1); var nom = obj[position][1]; nom;")
+
+TAG XPATH="//div[@id='div_p140']/label[2]/input[@name='unad40consec']" CONTENT={{!VAR2}}
+WAIT SECONDS=2
+TAG POS=1 TYPE=INPUT:HIDDEN FORM=ID:frmedita ATTR=ID:unad40nombre CONTENT={{!VAR3}}
+WAIT SECONDS=1
+PROMPT {{!VAR3}}
+TAG POS=1 TYPE=INPUT:BUTTON FORM=ID:frmedita ATTR=ID:cmdGuardar
+WAIT SECONDS=1
+TAG POS=1 TYPE=INPUT:BUTTON FORM=ID:frmedita ATTR=ID:cmdLimpiar
+WAIT SECONDS=2
+'[ [201521,"SISTEMA ECOLÓGICO DE PRODUCCIÓN BOVINA"], [151058,"DIPLOMADO DE PROFUNDIZACIÓN GESTIÓN DE LA SALUD PÚBLICA"]]
+'https://docs.google.com/spreadsheets/d/19isTeRW_H8Xwb0o2-hOk4r4U9n5GBb_T/edit#gid=1009438559
