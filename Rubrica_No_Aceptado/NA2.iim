@@ -1,0 +1,8 @@
+'SET !VAR3 EVAL("var contar = 0; for(var i=2; i<=200; i++){if(document.getElementById(\"res_\"+i)!=null){contar++;}}for(i=2; i<=contar+1; i++){let assignmentField = document.getElementById(\"res_\"+i);assignmentField.value = 0;document.getElementById(\"bguarda_\"+i).click();}")
+SET !VAR1 EVAL("var aux=parseInt(\"{{!LOOP}}\")+101; var aux2 = \"res_\"+aux; aux2; ")
+SET !VAR2 EVAL("var aux=parseInt(\"{{!LOOP}}\")+101; var aux2 = \"bguarda_\"+aux; aux2;")
+TAG POS=1 TYPE=SELECT FORM=ID:frmedita ATTR=ID:{{!VAR1}} EXTRACT=TXT
+SET !VAR3 EVAL("var aux=\"{{!EXTRACT}}\"; if(aux==\"#EANF#\"){alert(\"Rúbrica finalizada\"); MacroError(\"Rúbrica finalizada\")}; aux;")
+
+TAG POS=1 TYPE=SELECT FORM=ID:frmedita ATTR=ID:{{!VAR1}} CONTENT=%0
+TAG POS=1 TYPE=INPUT:BUTTON FORM=ID:frmedita ATTR=ID:{{!VAR2}}
