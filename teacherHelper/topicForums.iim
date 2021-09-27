@@ -1,0 +1,13 @@
+'FUNCTIONAL IMACRO WITH TXT PLANE
+
+SET !VAR1 "This is a test"
+SET !VAR2 "This is a test"
+
+TAG POS=1 TYPE=SELECT FORM=ID:selectgroup ATTR=ID:single_select* CONTENT=#{{!LOOP}}
+WAIT SECONDS=3
+TAG POS=1 TYPE=A ATTR=TXT:"*A*adir un nuevo tema de debate*" CONTENT={ENTER}
+WAIT SECONDS=1
+TAG POS=1 TYPE=INPUT FORM=ID:mformforum ATTR=ID:id_subject CONTENT={{!VAR1}}
+TAG POS=1 TYPE=TEXTAREA FORM=ID:mformforum ATTR=ID:id_message CONTENT={{!VAR2}}
+TAG POS=1 TYPE=INPUT FORM=ID:mformforum ATTR=ID:id_submitbutton CONTENT={ENTER}
+WAIT SECONDS=2
